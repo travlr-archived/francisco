@@ -1,0 +1,45 @@
+prodatalab@sierra:~/freelance/codetofrancisco/code2francisco/osm-out$ netconvert --osm-files ../osm/sanfrancisco.osm --output-file sanfrancisco.net.xml
+Warning: No way found for reference '87235206' in relation '1323199'                                                                  
+Warning: No way found for reference '89802446' in relation '1323199'                                                                  
+Warning: Ignoring restriction relation '1323199' with unknown from-way.                                                               
+Warning: Ignoring restriction relation '1323199' with unknown to-way.                                                                 
+Warning: No way found for reference '89802410' in relation '1323202'                                                                  
+Warning: No way found for reference '89802416' in relation '1323202'                                                                  
+Warning: Ignoring restriction relation '1323202' with unknown from-way.                                                               
+Warning: Ignoring restriction relation '1323202' with unknown to-way.                                                                 
+Warning: No way found for reference '87235213' in relation '1298384'
+Warning: No way found for reference '35976572' in relation '1298384'
+Warning: Ignoring restriction relation '1298384' with unknown from-way.
+Warning: Ignoring restriction relation '1298384' with unknown to-way.
+Warning: No way found for reference '43942477' in relation '1298389'
+Warning: No way found for reference '35976572' in relation '1298389'
+Warning: Ignoring restriction relation '1298389' with unknown from-way.
+Warning: Ignoring restriction relation '1298389' with unknown to-way.
+Warning: No way found for reference '43942477' in relation '1298396'
+Warning: No way found for reference '87235206' in relation '1298396'
+Warning: Ignoring restriction relation '1298396' with unknown from-way.
+Warning: Ignoring restriction relation '1298396' with unknown to-way.
+Warning: No way found for reference '286188526' in relation '3795268'
+Warning: No way found for reference '286188737' in relation '3795268'
+Warning: Ignoring restriction relation '3795268' with unknown from-way.
+Warning: Ignoring restriction relation '3795268' with unknown to-way.
+Warning: No way found for reference '286188737' in relation '3795269'
+Warning: Ignoring restriction relation '3795269' with unknown to-way.
+Warning: No way found for reference '133856238' in relation '3796245'
+Warning: Ignoring restriction relation '3796245' with unknown from-way.
+Warning: No way found for reference '133856239' in relation '3796247'
+Warning: Ignoring restriction relation '3796247' with unknown to-way.
+Warning: No way found for reference '158602268' in relation '3796246'
+Warning: No way found for reference '133856239' in relation '3796246'
+Warning: Ignoring restriction relation '3796246' with unknown from-way.
+Warning: Ignoring restriction relation '3796246' with unknown to-way.
+Warning: Found sharp turn with radius 8.32 at the start of edge -217621108#1
+Warning: Found sharp turn with radius 7.51 at the start of edge -217621108#4
+Warning: Found sharp turn with radius 8.83 at the start of edge -217621108#5
+Warning: Found sharp turn with radius 7.17 at the start of edge 217621108#1
+Warning: Found sharp turn with radius 8.60 at the start of edge 217621108#4
+Warning: The traffic light '258916776' does not control any links; it will not be build.
+Warning: Could not build program '0' for traffic light '258916776'
+Warning: The traffic light '65289501' does not control any links; it will not be build.
+Warning: Could not build program '0' for traffic light '65289501'
+Success.
