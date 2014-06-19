@@ -15,6 +15,8 @@
 
 package francisco;
 
+import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
+
 simple NsfApplLayer extends BaseWaveApplLayer
 {
     parameters:
