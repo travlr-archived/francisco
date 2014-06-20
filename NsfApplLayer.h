@@ -30,6 +30,7 @@ class NsfApplLayer  :  public BaseWaveApplLayer {
         std::vector<WaveShortMessage*> neighbors;
         std::vector<WaveShortMessage*> warnings;
         double sendInterval;
+        WaveShortMessage* generatedWarningMessage;
 };
 
 #endif /* NSFAPPLLAYER_H_ */

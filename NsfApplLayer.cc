@@ -7,7 +7,10 @@ void NsfApplLayer::initialize(int stage) {
 	BaseWaveApplLayer::initialize(stage);
 	receivedBeacons = 0;
 	receivedData = 0;
-	sendInterval = par("sendInterval");
+	sendInterval = par("sendInterval").doubleValue();
+	generatedWarningMessage = prepareWSM("data", dataLengthBits, type_CCH, dataPriority, 0, 2);
+	sendData = true;
+	dataOnSch = false;
 }
 
 void NsfApplLayer::onBeacon(WaveShortMessage* wsm) {
@@ -31,6 +34,8 @@ void NsfApplLayer::onBeacon(WaveShortMessage* wsm) {
 	    neighbors.push_back(wsm);
 	    EV << "[INFO] IS NEW NEIGHBOR: " << wsm->getSenderAddress() << endl;
 	    for (uint32_t i = 0; i < warnings.size(); ++i ) {
+	        WaveShortMessage* w = warnings[i];
+	        WaveShortMessage* m = prepareWSM(w->get)
 	        sendWSM(warnings[i]);
 	    }
 	}
