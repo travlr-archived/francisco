@@ -13,13 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package francisco;
+#ifndef EMDRAPPLLAYER_H_
+#define EMDRAPPLLAYER_H_
 
-import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
+#include <BaseWaveApplLayer.h>
 
-simple NsfApplLayer extends BaseWaveApplLayer
-{
-    parameters:
-        volatile double sendInterval @unit(s) = default(exponential(350ms));
-        @class(NsfApplLayer);
-}
+class EmdrApplLayer: public BaseWaveApplLayer {
+public:
+    EmdrApplLayer();
+    virtual ~EmdrApplLayer();
+};
+
+#endif /* EMDRAPPLLAYER_H_ */

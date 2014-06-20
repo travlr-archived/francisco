@@ -15,11 +15,9 @@
 
 package francisco;
 
-import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
-
-simple NsfApplLayer extends BaseWaveApplLayer
+//
+// TODO auto-generated type
+//
+network DvcastApplLayer
 {
-    parameters:
-        volatile double sendInterval @unit(s) = default(exponential(350ms));
-        @class(NsfApplLayer);
 }

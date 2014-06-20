@@ -5,9 +5,7 @@ import org.mixim.base.modules.IMobility;
 import org.mixim.modules.nic.Nic80211p;
 
 
-//
-// Example host module using an 802.11p Network interface card.
-//
+
 module Host80211p
 {
     parameters:

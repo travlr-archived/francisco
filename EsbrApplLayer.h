@@ -13,13 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package francisco;
+#ifndef ESBRAPPLLAYER_H_
+#define ESBRAPPLLAYER_H_
 
-import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
+#include <BaseWaveApplLayer.h>
 
-simple NsfApplLayer extends BaseWaveApplLayer
-{
-    parameters:
-        volatile double sendInterval @unit(s) = default(exponential(350ms));
-        @class(NsfApplLayer);
-}
+class EsbrApplLayer: public BaseWaveApplLayer {
+public:
+    EsbrApplLayer();
+    virtual ~EsbrApplLayer();
+};
+
+#endif /* ESBRAPPLLAYER_H_ */

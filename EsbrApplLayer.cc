@@ -13,13 +13,14 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package francisco;
+#include <EsbrApplLayer.h>
 
-import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
+EsbrApplLayer::EsbrApplLayer() {
+    // TODO Auto-generated constructor stub
 
-simple NsfApplLayer extends BaseWaveApplLayer
-{
-    parameters:
-        volatile double sendInterval @unit(s) = default(exponential(350ms));
-        @class(NsfApplLayer);
 }
+
+EsbrApplLayer::~EsbrApplLayer() {
+    // TODO Auto-generated destructor stub
+}
+

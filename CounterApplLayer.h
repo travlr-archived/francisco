@@ -13,13 +13,15 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-package francisco;
+#ifndef COUNTERAPPLLAYER_H_
+#define COUNTERAPPLLAYER_H_
 
-import org.mixim.modules.application.ieee80211p.BaseWaveApplLayer;
+#include <BaseWaveApplLayer.h>
 
-simple NsfApplLayer extends BaseWaveApplLayer
-{
-    parameters:
-        volatile double sendInterval @unit(s) = default(exponential(350ms));
-        @class(NsfApplLayer);
-}
+class CounterApplLayer: public BaseWaveApplLayer {
+public:
+    CounterApplLayer();
+    virtual ~CounterApplLayer();
+};
+
+#endif /* COUNTERAPPLLAYER_H_ */
