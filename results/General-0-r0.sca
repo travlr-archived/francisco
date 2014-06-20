@@ -1,0 +1,56 @@
+version 2
+run General-0-20140620-11:16:40-12440
+attr configname General
+attr datetime 20140620-11:16:40
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network net
+attr processid 12440
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar net.host[0].nic.phy80211p 	busyTime 	0.00015571395983035
+scalar net.host[0].nic.mac1609_4 	ReceivedUnicastPackets 	0
+scalar net.host[0].nic.mac1609_4 	ReceivedBroadcasts 	3
+scalar net.host[0].nic.mac1609_4 	SentPackets 	1
+scalar net.host[0].nic.mac1609_4 	SNIRLostPackets 	0
+scalar net.host[0].nic.mac1609_4 	RXTXLostPackets 	0
+scalar net.host[0].nic.mac1609_4 	TotalLostPackets 	0
+scalar net.host[0].nic.mac1609_4 	DroppedPacketsInMac 	0
+scalar net.host[0].nic.mac1609_4 	TooLittleTime 	0
+scalar net.host[0].nic.mac1609_4 	TimesIntoBackoff 	2
+scalar net.host[0].nic.mac1609_4 	SlotsBackoff 	1
+scalar net.host[0].nic.mac1609_4 	NumInternalContention 	0
+scalar net.host[0].nic.mac1609_4 	totalBusyTime 	0.000279666664
+scalar net.host[1].nic.phy80211p 	busyTime 	0.00015571395983035
+scalar net.host[1].nic.mac1609_4 	ReceivedUnicastPackets 	0
+scalar net.host[1].nic.mac1609_4 	ReceivedBroadcasts 	3
+scalar net.host[1].nic.mac1609_4 	SentPackets 	2
+scalar net.host[1].nic.mac1609_4 	SNIRLostPackets 	0
+scalar net.host[1].nic.mac1609_4 	RXTXLostPackets 	0
+scalar net.host[1].nic.mac1609_4 	TotalLostPackets 	0
+scalar net.host[1].nic.mac1609_4 	DroppedPacketsInMac 	0
+scalar net.host[1].nic.mac1609_4 	TooLittleTime 	0
+scalar net.host[1].nic.mac1609_4 	TimesIntoBackoff 	1
+scalar net.host[1].nic.mac1609_4 	SlotsBackoff 	0
+scalar net.host[1].nic.mac1609_4 	NumInternalContention 	0
+scalar net.host[1].nic.mac1609_4 	totalBusyTime 	0.000279666664
+scalar net.host[2].nic.phy80211p 	busyTime 	0.00010380930655356
+scalar net.host[2].nic.mac1609_4 	ReceivedUnicastPackets 	0
+scalar net.host[2].nic.mac1609_4 	ReceivedBroadcasts 	2
+scalar net.host[2].nic.mac1609_4 	SentPackets 	2
+scalar net.host[2].nic.mac1609_4 	SNIRLostPackets 	0
+scalar net.host[2].nic.mac1609_4 	RXTXLostPackets 	0
+scalar net.host[2].nic.mac1609_4 	TotalLostPackets 	0
+scalar net.host[2].nic.mac1609_4 	DroppedPacketsInMac 	0
+scalar net.host[2].nic.mac1609_4 	TooLittleTime 	0
+scalar net.host[2].nic.mac1609_4 	TimesIntoBackoff 	2
+scalar net.host[2].nic.mac1609_4 	SlotsBackoff 	2
+scalar net.host[2].nic.mac1609_4 	NumInternalContention 	0
+scalar net.host[2].nic.mac1609_4 	totalBusyTime 	0.000280666664

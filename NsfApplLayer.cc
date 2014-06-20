@@ -7,6 +7,7 @@ void NsfApplLayer::initialize(int stage) {
 	BaseWaveApplLayer::initialize(stage);
 	receivedBeacons = 0;
 	receivedData = 0;
+	sendInterval = par("sendInterval");
 }
 
 void NsfApplLayer::onBeacon(WaveShortMessage* wsm) {

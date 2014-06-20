@@ -29,7 +29,7 @@ class NsfApplLayer  :  public BaseWaveApplLayer {
         uint32_t receivedData;
         std::vector<WaveShortMessage*> neighbors;
         std::vector<WaveShortMessage*> warnings;
-        double sendInterval = par("sendInterval");
+        double sendInterval;
 };
 
 #endif /* NSFAPPLLAYER_H_ */
