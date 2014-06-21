@@ -3,6 +3,7 @@
 
 #include "BaseModule.h"
 #include <BaseWaveApplLayer.h>
+#include "mobility/traci/TraCIMobility.h"
 #include <vector>
 
 #ifndef DBG
@@ -23,6 +24,9 @@ class NsfApplLayer  :  public BaseWaveApplLayer {
         virtual void onBeacon(WaveShortMessage* wsm);
         virtual void onData(WaveShortMessage* wsm);
         void removeNeighbor(WaveShortMessage* neighborsToRemove, uint32_t numToRemove);
+        void sendMessage(WaveShortMessage *wsm);
+        void sendMessage(std::string blockedRoadId);
+        virtual void handlePositionUpdate(cObject* obj);
 
     protected:
         uint32_t receivedBeacons;
@@ -31,6 +35,10 @@ class NsfApplLayer  :  public BaseWaveApplLayer {
         std::vector<WaveShortMessage*> warnings;
         double sendInterval;
         WaveShortMessage* generatedWarningMessage;
+        TraCIMobility* traci;
+        AnnotationManager* annotations;
+        simtime_t lastDroveAt;
+        bool sentMessage;
 };
 
 #endif /* NSFAPPLLAYER_H_ */

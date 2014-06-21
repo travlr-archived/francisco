@@ -22,4 +22,5 @@ simple NsfApplLayer extends BaseWaveApplLayer
     parameters:
         volatile double sendInterval @unit(s) = default(exponential(350ms));
         @class(NsfApplLayer);
+        display("i=block/app2");
 }
