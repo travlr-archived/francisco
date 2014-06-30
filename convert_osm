@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# arg1 = name of city or map region (common to all sumo files)
+# arg1 = name of osm file
+
+
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+usage() {
+
+    echo "./$(basename "$0") <name-of-city-or-map-region> <name-of-osm-file>"
+}
+
+[ "$#" -eq 2 ] || die "2 arguments required, $# provided"
+
+if [[ ! -f ${2} ]]; then
+
+    usage
+fi
+
+
+echo "########################################"
+echo "#     Running netconvert               #"
+echo "########################################"
+
+netconvert --osm ${2} -o ${1}.net.xml --ignore-errors --ramps.guess --remove-edges.isolated --junctions.join --remove-edges.by-vclass rail_slow,rail_fast,bicycle,pedestrian
+
+echo "########################################"
+echo "#    Running netcheck.py               #"
+echo "########################################"
+
+ ${SUMO_HOME}/tools/net/netcheck.py ${1}.net.xml
+
+echo "########################################"
+echo "#    Running randomTrips.py            #"
+echo "########################################"
+
+
+${SUMO_HOME}/tools/trip/randomTrips.py -n ${1}.net.xml -o ${1}.trips.xml
+
+echo "#########################################"
+echo "#    Running duarouter                  #"
+echo "#########################################"
+
+duarouter --repair true --trip-files ${1}.trips.xml --net-file ${1}.net.xml --output-file ${1}.rou.xml
+
+
+echo "#########################################"
+echo "#    running polyconvert                #"
+echo "#########################################"
+
+polyconvert -n ${1}.net.xml --osm-files ${2} -o ${1}.poly.xml

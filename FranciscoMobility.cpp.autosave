@@ -1,0 +1,17 @@
+#include "FranciscoMobility.h"
+
+using Veins::TraCIMobilityAccess;
+
+
+FranciscoMobility::FranciscoMobility()
+{
+    traci = TraCIMobilityAccess().get(getParentModule());
+}
+
+
+
+list<string> BaseFranciscoApplLayer::getVehicles()
+{
+
+        return traci->getCommandInterface()->genericGetStringList(CMD_GET_ROUTE_VARIABLE, 0, 0x00, RESPONSE_GET_ROUTE_VARIABLE);
+}

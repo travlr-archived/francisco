@@ -1,44 +1,25 @@
-#ifndef NSFAPPLLAYER_H_
-#define NSFAPPLLAYER_H_
+#ifndef NsfApplLayer_H
+#define NsfApplLayer_H
 
-#include "BaseModule.h"
-#include <BaseWaveApplLayer.h>
-#include "mobility/traci/TraCIMobility.h"
-#include <vector>
-
-#ifndef DBG
-#define DBG EV
-#endif
-
-#define MAX_NEIGHBORS 1000
+#include "BaseFranciscoApplLayer.h"
 
 
-class NsfApplLayer  :  public BaseWaveApplLayer {
-    public:
+class NsfApplLayer : public BaseFranciscoApplLayer
+{
 
-        virtual ~NsfApplLayer();
+public:
+    virtual void initialize(int stage);
 
-        virtual void initialize(int stage);
+protected:
+    virtual void onBeacon(WaveShortMessage* wsm);
+    virtual void onData(WaveShortMessage* wsm);
 
-    protected:
-        virtual void onBeacon(WaveShortMessage* wsm);
-        virtual void onData(WaveShortMessage* wsm);
-        void removeNeighbor(WaveShortMessage* neighborsToRemove, uint32_t numToRemove);
-        void sendMessage(WaveShortMessage *wsm);
-        void sendMessage(std::string blockedRoadId);
-        virtual void handlePositionUpdate(cObject* obj);
+private:
+    vector<WaveShortMessage*> neighborMsgs;
+    vector<WaveShortMessage*> warningMsgs;
 
-    protected:
-        uint32_t receivedBeacons;
-        uint32_t receivedData;
-        std::vector<WaveShortMessage*> neighbors;
-        std::vector<WaveShortMessage*> warnings;
-        double sendInterval;
-        WaveShortMessage* generatedWarningMessage;
-        TraCIMobility* traci;
-        AnnotationManager* annotations;
-        simtime_t lastDroveAt;
-        bool sentMessage;
+    vector<std::string> neighborIds;
+
 };
 
-#endif /* NSFAPPLLAYER_H_ */
+#endif // NsfApplLayer_H

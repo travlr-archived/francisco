@@ -1,27 +1,42 @@
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
+#ifndef NjlApplLayer_H
+#define NjlApplLayer_H
 
-#ifndef NJLAPPLLAYER_H_
-#define NJLAPPLLAYER_H_
+#include "BaseFranciscoApplLayer.h"
+#include <list>
+#include <vector>
 
-#include <BaseWaveApplLayer.h>
+#define SEND_REBROADCAST_EVENT 3
 
-class NjlApplLayer: public BaseWaveApplLayer {
+using namespace std;
+
+class Junction;
+
+class NjlApplLayer : public BaseFranciscoApplLayer
+{
+
 public:
-    NjlApplLayer();
-    virtual ~NjlApplLayer();
+    virtual void initialize(int stage);
+
+protected:
+    double junctionDistanceThreshold;
+
+
+protected:
+    virtual void onBeacon(WaveShortMessage* wsm);
+    virtual void onData(WaveShortMessage* wsm);
+    virtual void handleSelfMsg(cMessage* msg);
+
+private:
+
+    vector<WaveShortMessage*> neighborMsgs;
+    vector<std::string> neighborIds;
+    vector<WaveShortMessage*> warningMsgs;
+
+    vector<std::string> neighborJunctions;
+    vector<WaveShortMessage*> hotWSMs;                    // msgs requiring the 'security' delay
+    vector<int> hotWSMRepeatIndices;                      // indices of those hotMsgs that have been recv'd again.
+    Veins::AnnotationManager* annotationManager;
 };
 
-#endif /* NJLAPPLLAYER_H_ */
+
+#endif // NjlApplLayer_H

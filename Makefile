@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for francisco
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/tests/testUtils -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/src/base -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/src/modules -lmiximtestUtils -lmiximbase -lmiximmodules -KMIXIM_PROJ=/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1
+#  opp_makemake -f -L../veins-3a2/out/gcc-debug/src -lveins
 #
 
 # Name of target to be created (-o option)
@@ -14,14 +14,14 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 #USERIF_LIBS = $(TKENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = -I. -Iresults
+INCLUDE_PATH = -I.
 
 # Additional object and library files to link with
 EXTRA_OBJS =
 
 # Additional libraries (-L, -l options)
-LIBS = -L$(MIXIM_PROJ)/out/$(CONFIGNAME)/tests/testUtils -L$(MIXIM_PROJ)/out/$(CONFIGNAME)/src/base -L$(MIXIM_PROJ)/out/$(CONFIGNAME)/src/modules  -lmiximtestUtils -lmiximbase -lmiximmodules
-LIBS += -Wl,-rpath,`abspath $(MIXIM_PROJ)/out/$(CONFIGNAME)/tests/testUtils` -Wl,-rpath,`abspath $(MIXIM_PROJ)/out/$(CONFIGNAME)/src/base` -Wl,-rpath,`abspath $(MIXIM_PROJ)/out/$(CONFIGNAME)/src/modules`
+LIBS = -L../veins-3a2/out/gcc-debug/src  -lveins
+LIBS += -Wl,-rpath,`abspath ../veins-3a2/out/gcc-debug/src`
 
 # Output directory
 PROJECT_OUTPUT_DIR = out
@@ -30,22 +30,19 @@ O = $(PROJECT_OUTPUT_DIR)/$(CONFIGNAME)/$(PROJECTRELATIVE_PATH)
 
 # Object files for local .cc and .msg files
 OBJS = \
-    $O/FloodingApplLayer.o \
-    $O/DvcastApplLayer.o \
+    $O/BaseFranciscoApplLayer.o \
     $O/CounterApplLayer.o \
-    $O/NjlApplLayer.o \
-    $O/NsfApplLayer.o \
-    $O/EmdrApplLayer.o \
     $O/DistanceApplLayer.o \
+    $O/DvcastApplLayer.o \
+    $O/EmdrApplLayer.o \
     $O/EsbrApplLayer.o \
-    $O/Warning_m.o
+    $O/FloodingApplLayer.o \
+    $O/FranciscoMobility.o \
+    $O/NjlApplLayer.o \
+    $O/NsfApplLayer.o
 
 # Message files
-MSGFILES = \
-    Warning.msg
-
-# Other makefile variables (-K)
-MIXIM_PROJ=/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1
+MSGFILES =
 
 #------------------------------------------------------------------------------
 
@@ -119,32 +116,49 @@ clean:
 	$(Q)-rm -rf $O
 	$(Q)-rm -f francisco francisco.exe libfrancisco.so libfrancisco.a libfrancisco.dll libfrancisco.dylib
 	$(Q)-rm -f ./*_m.cc ./*_m.h
-	$(Q)-rm -f results/*_m.cc results/*_m.h
 
 cleanall: clean
 	$(Q)-rm -rf $(PROJECT_OUTPUT_DIR)
 
 depend:
 	$(qecho) Creating dependencies...
-	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc results/*.cc
+	$(Q)$(MAKEDEPEND) $(INCLUDE_PATH) -f Makefile -P\$$O/ -- $(MSG_CC_FILES)  ./*.cc
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
+$O/BaseFranciscoApplLayer.o: BaseFranciscoApplLayer.cc \
+  ./BaseFranciscoApplLayer.h \
+  ./FranciscoMobility.h
 $O/CounterApplLayer.o: CounterApplLayer.cc \
-	CounterApplLayer.h
+  ./BaseFranciscoApplLayer.h \
+  ./FranciscoMobility.h \
+  ./CounterApplLayer.h
 $O/DistanceApplLayer.o: DistanceApplLayer.cc \
-	DistanceApplLayer.h
+  ./DistanceApplLayer.h \
+  ./FranciscoMobility.h \
+  ./BaseFranciscoApplLayer.h
 $O/DvcastApplLayer.o: DvcastApplLayer.cc \
-	DvcastApplLayer.h
+  ./BaseFranciscoApplLayer.h \
+  ./FranciscoMobility.h \
+  ./DvcastApplLayer.h
 $O/EmdrApplLayer.o: EmdrApplLayer.cc \
-	EmdrApplLayer.h
+  ./BaseFranciscoApplLayer.h \
+  ./FranciscoMobility.h \
+  ./EmdrApplLayer.h
 $O/EsbrApplLayer.o: EsbrApplLayer.cc \
-	EsbrApplLayer.h
+  ./EsbrApplLayer.h \
+  ./FranciscoMobility.h \
+  ./BaseFranciscoApplLayer.h
 $O/FloodingApplLayer.o: FloodingApplLayer.cc \
-	FloodingApplLayer.h
+  ./FranciscoMobility.h \
+  ./BaseFranciscoApplLayer.h \
+  ./FloodingApplLayer.h
+$O/FranciscoMobility.o: FranciscoMobility.cc \
+  ./FranciscoMobility.h
 $O/NjlApplLayer.o: NjlApplLayer.cc \
-	NjlApplLayer.h
+  ./NjlApplLayer.h \
+  ./FranciscoMobility.h \
+  ./BaseFranciscoApplLayer.h
 $O/NsfApplLayer.o: NsfApplLayer.cc \
-	NsfApplLayer.h
-$O/Warning_m.o: Warning_m.cc \
-	Warning_m.h
-
+  ./FranciscoMobility.h \
+  ./BaseFranciscoApplLayer.h \
+  ./NsfApplLayer.h

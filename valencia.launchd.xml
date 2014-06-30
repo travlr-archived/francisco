@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!-- debug config -->
+<launch>
+    <copy file="valencia.net.xml" />
+    <copy file="valencia.rou.xml" />
+    <copy file="valencia.poly.xml" />
+    <copy file="valencia.sumo.cfg" type="config" />
+</launch>

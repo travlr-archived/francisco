@@ -1,0 +1,3 @@
+#!/bin/bash
+
+opp_makemake -f -L../veins-3a2/out/gcc-debug/src -lveins && make

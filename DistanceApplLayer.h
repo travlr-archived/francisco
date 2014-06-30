@@ -1,27 +1,19 @@
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
+#ifndef DistanceApplLayer_H
+#define DistanceApplLayer_H
 
-#ifndef DISTANCEAPPLLAYER_H_
-#define DISTANCEAPPLLAYER_H_
+#include "BaseFranciscoApplLayer.h"
 
-#include <BaseWaveApplLayer.h>
 
-class DistanceApplLayer: public BaseWaveApplLayer {
+class DistanceApplLayer : public BaseFranciscoApplLayer
+{
+
 public:
-    DistanceApplLayer();
-    virtual ~DistanceApplLayer();
+    virtual void initialize(int stage);
+
+protected:
+    virtual void onBeacon(WaveShortMessage* wsm);
+    virtual void onData(WaveShortMessage* wsm);
+
 };
 
-#endif /* DISTANCEAPPLLAYER_H_ */
+#endif // DistanceApplLayer_H
