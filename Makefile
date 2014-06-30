@@ -2,7 +2,7 @@
 # OMNeT++/OMNEST Makefile for francisco
 #
 # This file was generated with the command:
-#  opp_makemake -f --deep -O out -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/base/messages -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/phy -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/utility -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/obstacle -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/base/connectionManager -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/analogueModel -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/messages -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/base/phyLayer -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/base/modules -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/mac/ieee80211p -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/modules/application/ieee80211p -I/home/prodatalab/src/_veins-2.2/veins-veins-2.2/src/base/utils -L/home/prodatalab/src/_veins-2.2/veins-veins-2.2/out/$$\(CONFIGNAME\)/tests/testUtils -L/home/prodatalab/src/_veins-2.2/veins-veins-2.2/out/$$\(CONFIGNAME\)/src/base -L/home/prodatalab/src/_veins-2.2/veins-veins-2.2/out/$$\(CONFIGNAME\)/src/modules -lmiximtestUtils -lmiximbase -lmiximmodules -KMIXIM_PROJ=/home/prodatalab/src/_veins-2.2/veins-veins-2.2
+#  opp_makemake -f --deep -O out -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/tests/testUtils -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/src/base -L/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1/out/$$\(CONFIGNAME\)/src/modules -lmiximtestUtils -lmiximbase -lmiximmodules -KMIXIM_PROJ=/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1
 #
 
 # Name of target to be created (-o option)
@@ -14,22 +14,7 @@ USERIF_LIBS = $(ALL_ENV_LIBS) # that is, $(TKENV_LIBS) $(CMDENV_LIBS)
 #USERIF_LIBS = $(TKENV_LIBS)
 
 # C++ include paths (with -I)
-INCLUDE_PATH = \
-    -I$(MIXIM_PROJ)/src/base/messages \
-    -I$(MIXIM_PROJ)/src/modules/phy \
-    -I$(MIXIM_PROJ)/src/modules/utility \
-    -I$(MIXIM_PROJ)/src/modules \
-    -I$(MIXIM_PROJ)/src/modules/obstacle \
-    -I$(MIXIM_PROJ)/src/base/connectionManager \
-    -I$(MIXIM_PROJ)/src/modules/analogueModel \
-    -I$(MIXIM_PROJ)/src/modules/messages \
-    -I$(MIXIM_PROJ)/src/base/phyLayer \
-    -I$(MIXIM_PROJ)/src/base/modules \
-    -I$(MIXIM_PROJ)/src/modules/mac/ieee80211p \
-    -I$(MIXIM_PROJ)/src/modules/application/ieee80211p \
-    -I$(MIXIM_PROJ)/src/base/utils \
-    -I. \
-    -Iresults
+INCLUDE_PATH = -I. -Iresults
 
 # Additional object and library files to link with
 EXTRA_OBJS =
@@ -60,7 +45,7 @@ MSGFILES = \
     Warning.msg
 
 # Other makefile variables (-K)
-MIXIM_PROJ=/home/prodatalab/src/_veins-2.2/veins-veins-2.2
+MIXIM_PROJ=/home/prodatalab/src/mixim-sommer-VACaMobil0.2.1
 
 #------------------------------------------------------------------------------
 
@@ -145,221 +130,21 @@ depend:
 
 # DO NOT DELETE THIS LINE -- make depend depends on it.
 $O/CounterApplLayer.o: CounterApplLayer.cc \
-	CounterApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	CounterApplLayer.h
 $O/DistanceApplLayer.o: DistanceApplLayer.cc \
-	DistanceApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	DistanceApplLayer.h
 $O/DvcastApplLayer.o: DvcastApplLayer.cc \
-	DvcastApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	DvcastApplLayer.h
 $O/EmdrApplLayer.o: EmdrApplLayer.cc \
-	EmdrApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	EmdrApplLayer.h
 $O/EsbrApplLayer.o: EsbrApplLayer.cc \
-	EsbrApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	EsbrApplLayer.h
 $O/FloodingApplLayer.o: FloodingApplLayer.cc \
-	FloodingApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	FloodingApplLayer.h
 $O/NjlApplLayer.o: NjlApplLayer.cc \
-	NjlApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h
+	NjlApplLayer.h
 $O/NsfApplLayer.o: NsfApplLayer.cc \
-	NsfApplLayer.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/BaseConnectionManager.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/ChannelAccess.h \
-	$(MIXIM_PROJ)/src/base/connectionManager/NicEntry.h \
-	$(MIXIM_PROJ)/src/base/messages/MacPkt_m.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseApplLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseBattery.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseLayer.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseMobility.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseModule.h \
-	$(MIXIM_PROJ)/src/base/modules/BaseWorldUtility.h \
-	$(MIXIM_PROJ)/src/base/modules/BatteryAccess.h \
-	$(MIXIM_PROJ)/src/base/utils/Coord.h \
-	$(MIXIM_PROJ)/src/base/utils/FWMath.h \
-	$(MIXIM_PROJ)/src/base/utils/FindModule.h \
-	$(MIXIM_PROJ)/src/base/utils/HostState.h \
-	$(MIXIM_PROJ)/src/base/utils/MiXiMDefs.h \
-	$(MIXIM_PROJ)/src/base/utils/Move.h \
-	$(MIXIM_PROJ)/src/base/utils/NetwToMacControlInfo.h \
-	$(MIXIM_PROJ)/src/base/utils/PassedMessage.h \
-	$(MIXIM_PROJ)/src/base/utils/SimpleAddress.h \
-	$(MIXIM_PROJ)/src/base/utils/miximkerneldefs.h \
-	$(MIXIM_PROJ)/src/modules/application/ieee80211p/BaseWaveApplLayer.h \
-	$(MIXIM_PROJ)/src/modules/mac/ieee80211p/WaveAppToMac1609_4Interface.h \
-	$(MIXIM_PROJ)/src/modules/messages/Mac80211Pkt_m.h \
-	$(MIXIM_PROJ)/src/modules/messages/WaveShortMessage_m.h \
-	$(MIXIM_PROJ)/src/modules/mobility/traci/TraCIColor.h \
-	$(MIXIM_PROJ)/src/modules/mobility/traci/TraCIMobility.h \
-	$(MIXIM_PROJ)/src/modules/mobility/traci/TraCIScenarioManager.h \
-	$(MIXIM_PROJ)/src/modules/obstacle/Obstacle.h \
-	$(MIXIM_PROJ)/src/modules/obstacle/ObstacleControl.h \
-	$(MIXIM_PROJ)/src/modules/utility/Consts80211p.h \
-	$(MIXIM_PROJ)/src/modules/world/annotations/AnnotationManager.h
+	NsfApplLayer.h
 $O/Warning_m.o: Warning_m.cc \
 	Warning_m.h
 
